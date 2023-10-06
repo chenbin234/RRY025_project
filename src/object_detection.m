@@ -1,6 +1,16 @@
+<<<<<<< HEAD
 clear all;
 % Read an image containing the object (head/face)
 originalImage = imread('./img/protrait_5.jpg');
+=======
+addpath('fun/');
+addpath('img/');
+addpath('out/');
+
+% Read an image containing the object (head/face)
+img_path = 'portrait_1.png';
+originalImage = imread(img_path);
+>>>>>>> ebf29e2985ba232ec1c03ce8438105b0cc598f52
 
 % Convert the image to grayscale (if it's not already)
 gray_img = rgb2gray(originalImage);
