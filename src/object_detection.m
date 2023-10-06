@@ -1,5 +1,10 @@
+addpath('fun/');
+addpath('img/');
+addpath('out/');
+
 % Read an image containing the object (head/face)
-originalImage = imread('protrait_2.png');
+img_path = 'portrait_1.png';
+originalImage = imread(img_path);
 
 % Convert the image to grayscale (if it's not already)
 gray_img = rgb2gray(originalImage);

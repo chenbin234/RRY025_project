@@ -1,4 +1,8 @@
-I = imread('protrait_2.png');
+addpath('fun/');
+addpath('img/');
+addpath('out/');
+
+I = imread('portrait_2.png');
 imshow(I);
 Igray = rgb2gray(I);
 rmat = I(:,:,1);
