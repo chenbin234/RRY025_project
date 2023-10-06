@@ -1,8 +1,12 @@
+<<<<<<< HEAD
+I = imread('./img/protrait_1.png');
+=======
 addpath('fun/');
 addpath('img/');
 addpath('out/');
 
 I = imread('portrait_2.png');
+>>>>>>> ebf29e2985ba232ec1c03ce8438105b0cc598f52
 imshow(I);
 Igray = rgb2gray(I);
 rmat = I(:,:,1);

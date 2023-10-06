@@ -1,4 +1,4 @@
-function A = object_sharpen(A, type)
+function A = object_sharpen(image)
 
 
 
