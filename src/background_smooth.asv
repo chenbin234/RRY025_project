@@ -21,8 +21,8 @@ function blurred_background = background_smooth(image, mask)
     
     blurred_background = outputImg .* (1-mask);
 
-%     figure
-%     imshow(blurred_background)
+    figure
+    imshow(uint8(blurred_background))
 
 
 end

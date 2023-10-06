@@ -1,4 +1,4 @@
-I = imread('protrait_2.png');
+I = imread('./img/protrait_1.png');
 imshow(I);
 Igray = rgb2gray(I);
 rmat = I(:,:,1);
