@@ -1,5 +1,8 @@
-Image = imread('./img/protrait_2.png');
 
-blurred_background = background_smooth(Image, mask);
+A = [1 1 1 1 1;
+     1 1 0 1 1;
+     1 1 0 1 1;
+     1 1 0 1 1;
+     1 1 0 1 1]
 
-
+filtered_mask = filter_mask(1-A)
