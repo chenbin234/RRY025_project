@@ -1,16 +1,12 @@
-<<<<<<< HEAD
 clear all;
 % Read an image containing the object (head/face)
-originalImage = imread('./img/protrait_5.jpg');
-=======
-addpath('fun/');
-addpath('img/');
-addpath('out/');
+originalImage = imread('./img/portrait_0.jpeg');
+% originalImage = imread('./img/portrait_2.png');
 
 % Read an image containing the object (head/face)
-img_path = 'portrait_1.png';
-originalImage = imread(img_path);
->>>>>>> ebf29e2985ba232ec1c03ce8438105b0cc598f52
+% img_path = 'portrait_1.png';
+% originalImage = imread(originalImage);
+
 
 % Convert the image to grayscale (if it's not already)
 gray_img = rgb2gray(originalImage);
@@ -42,34 +38,40 @@ binary_edge_image_horizontal_2 = edge_response_horizontal_2 > threshold;
 binary_edge_image_horizontal_2 = convert_matrix(binary_edge_image_horizontal_2, 4);
 
 % Display the original image and the binary edge map
-figure;
-subplot(6, 1, 1);
-imshow(gray_img);
-title('Original Image');
+% figure;
+% subplot(6, 1, 1);
+% imshow(gray_img);
+% title('Original Image');
+% 
+% subplot(6, 1, 2);
+% imshow(binary_edge_image_vertical_1);
+% title('binary edge image vertical 1');
+% 
+% subplot(6, 1, 3);
+% imshow(binary_edge_image_vertical_2);
+% title('binary edge image vertical 2');
+% 
+% subplot(6, 1, 4);
+% imshow(binary_edge_image_horizontal_1);
+% title('binary edge image horizontal 1');
+% 
+% subplot(6, 1, 5);
+% imshow(binary_edge_image_horizontal_2);
+% title('binary edge image horizontal 2');
 
-subplot(6, 1, 2);
-imshow(binary_edge_image_vertical_1);
-title('binary edge image vertical 1');
 
-subplot(6, 1, 3);
-imshow(binary_edge_image_vertical_2);
-title('binary edge image vertical 2');
+add_all_image1 = binary_edge_image_vertical_1 + binary_edge_image_vertical_2 + binary_edge_image_horizontal_1 + binary_edge_image_horizontal_2;
+add_all_image2 = filter_mask(add_all_image1);
 
-subplot(6, 1, 4);
-imshow(binary_edge_image_horizontal_1);
-title('binary edge image horizontal 1');
+add_all_image = add_all_image1 + add_all_image2 + find_circle(add_all_image1);
 
-subplot(6, 1, 5);
-imshow(binary_edge_image_horizontal_2);
-title('binary edge image horizontal 2');
+add_all_image = add_all_image > 5;
+add_all_image = filter_mask(add_all_image);
 
 
-add_all_image = binary_edge_image_vertical_1 + binary_edge_image_vertical_2 + binary_edge_image_horizontal_1 + binary_edge_image_horizontal_2;
-add_all_image = add_all_image > 3;
-
-subplot(6, 1, 6);
-imshow(add_all_image);
-title('add all image');
+% subplot(6, 1, 6);
+% imshow(add_all_image);
+% title('add all image');
 
 
 figure;
